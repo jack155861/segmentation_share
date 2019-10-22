@@ -19,6 +19,8 @@
 *   https://github.com/lnugraha/trimap_generator
 *   git clone https://github.com/lnugraha/trimap_generator/
 *   cp -avr trimap_generator/images/test_images .
+*   from PIL import Image
+*   Image.fromarray
 ### step 
 1. git clone https://github.com/jack155861/segmentation_share 
 2. cd segmentation_share
