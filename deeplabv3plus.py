@@ -1,8 +1,11 @@
 import os
+from io import BytesIO
 import tarfile
 import numpy as np
 from PIL import Image
 import tensorflow as tf
+from six.moves import urllib
+from PIL import Image
 
 # DeepLabV3+ model loading
 class DeepLabModel(object):
@@ -39,9 +42,19 @@ MODEL_xception65_trainval = DeepLabModel("deeplabv3_pascal_trainval_2018_01_04.t
 print("deeplabv3+ model loading")
 
     
-def deeplabv3plus(photo_input):
+def deeplabv3plus(photo_input, website = False):
     MODEL = MODEL_xception65_trainval
-    original_im = Image.open(photo_input)
+    if website:
+        try:
+            f = urllib.request.urlopen(photo_input)
+            jpeg_str = f.read()
+            original_im = Image.open(BytesIO(jpeg_str))
+        except IOError:
+            print('Cannot retrieve image. Please check url: ' + photo_input)
+            return
+    else : 
+        original_im = Image.open(photo_input)
+        
     width, height = original_im.size
     resized_im, seg_map = MODEL.run(original_im)
     cm = seg_map
