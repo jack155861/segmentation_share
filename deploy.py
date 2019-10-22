@@ -5,6 +5,15 @@ import os
 from torchvision import transforms
 import numpy as np
 
+def compute_gradient(img):
+    x = cv2.Sobel(img, cv2.CV_16S, 1, 0)
+    y = cv2.Sobel(img, cv2.CV_16S, 0, 1)
+    absX = cv2.convertScaleAbs(x)
+    absY = cv2.convertScaleAbs(y)
+    grad = cv2.addWeighted(absX, 0.5, absY, 0.5, 0)
+    grad=cv2.cvtColor(grad, cv2.COLOR_BGR2GRAY)
+    return grad
+
 # inference once for image, return numpy
 def inference_once(model, scale_img, scale_trimap, aligned=True):
     size_h = 320
