@@ -1,10 +1,13 @@
 import cv2 
 import numpy as np
+from PIL import Image
 
 def trimap(image, size, erosion=False):
-    
-    row    = image.shape[0];
-    col    = image.shape[1];
+    if len(image.shape)>2:
+        image = image[:, :, 0]
+        
+    row = image.shape[0];
+    col = image.shape[1];
 
     pixels = 2*size + 1;                                     ## Double and plus 1 to have an odd-sized kernel
     kernel = np.ones((pixels,pixels),np.uint8)               ## How many pixel of extension do I get
@@ -38,4 +41,4 @@ def trimap(image, size, erosion=False):
             if (remake[i,j] != 0 and remake[i,j] != 255):
                 remake[i,j] = 128;
     print("generate trimap(size: " + str(size) + ", erosion: " + str(erosion) + ")")
-    return remake
+    return Image.fromarray(remake)
