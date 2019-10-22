@@ -30,7 +30,11 @@ def composite4(fg, bg, a, w, h):
     im = im.astype(np.uint8)
     return im
 
-def matting_result(pic_input, tri_input, model, website = False):
+model = loading_model()
+print("matting model loading")
+
+def matting_result(pic_input, tri_input, model_input, website = False):
+    model = model_input
     if website:
         original_im = pic_input 
     else :
