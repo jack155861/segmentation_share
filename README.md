@@ -25,3 +25,4 @@
 1. git clone https://github.com/jack155861/segmentation_share 
 2. cd segmentation_share
 3. wget http://download.tensorflow.org/models/deeplabv3_pascal_trainval_2018_01_04.tar.gz
+4. wget https://github.com/huochaitiantang/pytorch-deep-image-matting/releases/download/v1.4/stage1_sad_54.4.pth
