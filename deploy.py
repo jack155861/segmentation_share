@@ -77,4 +77,3 @@ def inference_img_whole(model, img, trimap):
     origin_pred_mattes = cv2.resize(pred_mattes, (w, h), interpolation = cv2.INTER_LINEAR)
     assert(origin_pred_mattes.shape == trimap.shape)
     return origin_pred_mattes
-
