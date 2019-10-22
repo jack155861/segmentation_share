@@ -3,7 +3,6 @@ import tarfile
 import numpy as np
 from PIL import Image
 import tensorflow as tf
-#os.environ["CUDA_VISIBLE_DEVICES"]="0,1"
 
 # DeepLabV3+ model loading
 class DeepLabModel(object):
@@ -59,5 +58,5 @@ def deeplabv3plus(photo_input):
     img_mask[cm!=0] = np.array([255, 255,255], dtype='uint8') 
     img_mask = Image.fromarray(img_mask).resize((width, height),Image.ANTIALIAS)
 
-    return img_seq, img_mask
+    return img_seq, img_mask, original_im
     
