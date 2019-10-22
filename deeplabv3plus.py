@@ -36,7 +36,7 @@ class DeepLabModel(object):
             feed_dict={self.INPUT_TENSOR_NAME: [np.asarray(resized_image)]})
         seg_map = batch_seg_map[0]
         return resized_image, seg_map
-MODEL_xception65_trainval = DeepLabModel("model_xception65_coco_voc_trainval.tar.gz")
+MODEL_xception65_trainval = DeepLabModel("deeplabv3_pascal_trainval_2018_01_04.tar.gz")
 print("deeplabv3+ model loading")
 
     
