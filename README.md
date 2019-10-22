@@ -10,6 +10,7 @@
 2. matting
 *   https://github.com/huochaitiantang/pytorch-deep-image-matting
 *   git clone https://github.com/huochaitiantang/pytorch-deep-image-matting
+*   cp -avr pytorch-deep-image-matting/result .
    
 ### step 
 1. git clone https://github.com/jack155861/segmentation_share 
