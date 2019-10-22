@@ -2,8 +2,8 @@
 
 ### source
 1. segmentation
-   https://github.com/tensorflow/models/tree/master/research/deeplab
-   https://github.com/tensorflow/models/blob/master/research/deeplab/g3doc/model_zoo.md
+*   https://github.com/tensorflow/models/tree/master/research/deeplab
+*   https://github.com/tensorflow/models/blob/master/research/deeplab/g3doc/model_zoo.md
    
 ### step 
 1. git clone https://github.com/jack155861/segmentation_share 
