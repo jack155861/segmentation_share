@@ -6,6 +6,7 @@
 *   https://github.com/tensorflow/models/blob/master/research/deeplab/g3doc/model_zoo.md
 2. matting
 *   https://github.com/huochaitiantang/pytorch-deep-image-matting
+*   python3 -m pip install torch
    
 ### step 
 1. git clone https://github.com/jack155861/segmentation_share 
