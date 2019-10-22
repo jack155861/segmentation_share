@@ -33,18 +33,14 @@ def composite4(fg, bg, a, w, h):
 model = loading_model()
 print("matting model loading")
 
-def matting_result(pic_input, tri_input, model_input, website = False):
-    model = model_input
-    if website:
-        original_im = pic_input 
-    else :
-        original_im = Image.open(pic_input)
-        original_im = np.array(original_im)[:, :, :3]
-    trimap_im = np.array(tri_input)
+def matting_result(pic_input, tri_input):
+    model_input = model
+    original_im = np.array(pic_input)[:, :, :3]
+    trimap_im = np.array(tri_input)    
     if len(trimap_im.shape)>2:
         trimap_im = trimap_im[:, :, 0]
     with torch.no_grad():
-        alpha = inference_img_whole(model, original_im, trimap_im)
+        alpha = inference_img_whole(model_input, original_im, trimap_im)
     
     alpha[trimap_im == 0] = 0.0
     alpha[trimap_im == 255] = 1.0
