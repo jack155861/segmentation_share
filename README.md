@@ -13,6 +13,7 @@
 *   cp -avr pytorch-deep-image-matting/result .
 *   cp pytorch-deep-image-matting/core/deploy.py .
 *   cp pytorch-deep-image-matting/core/net.py .
+*   rm -rf result/example/pred
 
 ### step 
 1. git clone https://github.com/jack155861/segmentation_share 
