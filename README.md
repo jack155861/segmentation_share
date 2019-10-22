@@ -17,6 +17,7 @@
 *   wget https://github.com/huochaitiantang/pytorch-deep-image-matting/releases/download/v1.4/stage1_sad_54.4.pth
 3. trimap
 *   https://github.com/lnugraha/trimap_generator
+*   wget https://github.com/lnugraha/trimap_generator/blob/master/images/test_images/test_image_10.png
 ### step 
 1. git clone https://github.com/jack155861/segmentation_share 
 2. cd segmentation_share
