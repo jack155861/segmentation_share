@@ -14,6 +14,7 @@
 *   cp pytorch-deep-image-matting/core/deploy.py .
 *   cp pytorch-deep-image-matting/core/net.py .
 *   rm -rf result/example/pred
+*   wget https://github.com/huochaitiantang/pytorch-deep-image-matting/releases/download/v1.4/stage1_sad_54.4.pth
 
 ### step 
 1. git clone https://github.com/jack155861/segmentation_share 
